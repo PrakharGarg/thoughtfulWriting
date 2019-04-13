@@ -14,6 +14,8 @@ function createWindow () {
       nodeIntegration: true
     },
     titleBarStyle: 'hiddenInset',
+    minHeight: 600,
+    minWidth: 600,
   })
 
   // and load the index.html of the app.
