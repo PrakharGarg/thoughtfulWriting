@@ -1,6 +1,6 @@
 .TextField {
     position: absolute;
-    width: 75%;
+    width: 70%;
     left: 25%;
     height: 100%;
     display: inline-block;
@@ -18,4 +18,9 @@
     height: 100%;
     outline: none;
     caret-color: orange;
+    font-family: apertura, sans-serif;
+    font-size: 18px;
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto;    
 }
