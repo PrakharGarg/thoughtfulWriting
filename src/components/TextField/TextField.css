@@ -4,6 +4,7 @@
     left: 30%;
     height: 100%;
     display: inline-block;
+    top: 5%;
 }
 
 .Input {
@@ -16,7 +17,7 @@
     height: 100%;
     outline: none;
     caret-color: orange;
-    font-family: apertura, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     border-style: none; 
     border-color: Transparent; 
