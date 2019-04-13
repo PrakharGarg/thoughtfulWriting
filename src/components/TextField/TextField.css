@@ -6,3 +6,16 @@
     display: inline-block;
     border-left: 1px solid #E0D6D5;
 }
+
+.Input {
+    width: 100%;
+    height: 100%;
+}
+
+.Input textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    caret-color: orange;
+}

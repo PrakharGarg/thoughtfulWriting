@@ -6,7 +6,7 @@ class TextField extends Component {
         return (
             <div className="TextField">
                 <div className="Input">
-                    {/* <input type="text"></input> */}
+                    <textarea autoFocus></textarea>
                 </div>
             </div>  
         );
