@@ -6,6 +6,10 @@
     display: inline-block;
 }
 
+.Input {
+    height: 100%;
+}
+
 .Input textarea {
     resize: none;
     width: 100%;
