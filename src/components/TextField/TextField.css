@@ -1,15 +1,9 @@
 .TextField {
     position: absolute;
-    width: 70%;
-    left: 25%;
+    width: 65%;
+    left: 30%;
     height: 100%;
     display: inline-block;
-    border-left: 1px solid #E0D6D5;
-}
-
-.Input {
-    width: 100%;
-    height: 100%;
 }
 
 .Input textarea {
@@ -22,5 +16,6 @@
     font-size: 18px;
     border-style: none; 
     border-color: Transparent; 
-    overflow: auto;    
+    overflow: auto;  
+    left: 20px;  
 }
