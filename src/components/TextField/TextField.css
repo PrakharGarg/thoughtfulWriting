@@ -1,0 +1,8 @@
+.TextField {
+    position: absolute;
+    width: 75%;
+    left: 25%;
+    height: 100%;
+    display: inline-block;
+    border-left: 1px solid #E0D6D5;
+}
