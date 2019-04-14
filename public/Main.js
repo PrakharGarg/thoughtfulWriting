@@ -16,6 +16,7 @@ function createWindow () {
     titleBarStyle: 'hiddenInset',
     minHeight: 600,
     minWidth: 600,
+    title: 'Thoughtful Writing',
   })
 
   // and load the index.html of the app.
