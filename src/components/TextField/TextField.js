@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
 import './TextField.css';
 import ISimpleMDE from 'react-simplemde-v1';
+import Sentiment from 'sentiment';
 import 'simplemde/dist/simplemde.min.css';
+import TextAnalysis from '../TextAnalysis/TextAnalysis';
 
 class TextField extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-    
-        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            value: '',
+            sentimentScore: 0,
+        };
       }
 
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
     render() {
+        const that = this;
+        const sentiment = new Sentiment();
         const option = {
             autofocus:true,
             toolbar: true,
             parsingConfig: {allowAtxHeaderWithoutSpace: true},
         };
+        const onEvents = {
+            change: function() {
+                console.log(sentiment.analyze(this.value()));
+                that.setState({
+                    value: this.value(),
+                    sentimentScore: sentiment.analyze(this.value())
+                })
+            }
+        }
         return (
             <div className="TextField">
                 <div className="Input">
@@ -27,8 +38,10 @@ class TextField extends Component {
                     <ISimpleMDE
                         option={option}
                         className='simplemde'
+                        onEvents={onEvents}
                     />
                 </div>
+                <TextAnalysis />
             </div>  
         );
     }
