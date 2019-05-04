@@ -15,6 +15,7 @@ class TextField extends Component {
       }
 
     render() {
+        const that = this;
         const sentiment = new Sentiment();
         const option = {
             autofocus:true,
@@ -39,7 +40,9 @@ class TextField extends Component {
                         onEvents={onEvents}
                     />
                 </div>
-                <TextAnalysis />
+                <TextAnalysis
+                    sentimentScore={ this.state.sentimentScore }
+                />
             </div>  
         );
     }
