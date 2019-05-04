@@ -26,11 +26,17 @@ class TextField extends Component {
     const onEvents = {
       change: function() {
         const sentimentObj = sentiment.analyze(this.value());
-        that.setState({
-          value: this.value(),
-          sentimentScore: sentimentObj.score,
-          sentimentComparative: sentimentObj.comparative
-        });
+        if (
+          this.value()
+            .substr(this.value().length - 1)
+            .match(/^[.,:!? ]/)
+        ) {
+          that.setState({
+            value: this.value(),
+            sentimentScore: sentimentObj.score,
+            sentimentComparative: sentimentObj.comparative
+          });
+        }
       }
     };
     return (
