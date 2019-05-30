@@ -1,5 +1,7 @@
 .TextAnalysis {
   position: absolute;
   z-index: 2;
-  color: #8882ff;
+  width: 100px;
+  bottom: -20px;
+  right: 0px;
 }

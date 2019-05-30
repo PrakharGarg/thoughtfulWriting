@@ -8,6 +8,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "react-simplemde-v1": "^2.0.1",
+    "react-svg-piechart": "^2.4.0",
     "sentiment": "^5.0.1",
     "simplemde": "^1.11.2"
   },

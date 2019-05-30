@@ -11,7 +11,9 @@ class TextField extends Component {
     this.state = {
       value: "",
       sentimentScore: 0,
-      sentimentComparative: 0
+      sentimentComparative: 0,
+      positiveWords: [],
+      negativeWords: []
     };
   }
 
@@ -26,11 +28,19 @@ class TextField extends Component {
     const onEvents = {
       change: function() {
         const sentimentObj = sentiment.analyze(this.value());
-        that.setState({
-          value: this.value(),
-          sentimentScore: sentimentObj.score,
-          sentimentComparative: sentimentObj.comparative
-        });
+        if (
+          this.value()
+            .substr(this.value().length - 1)
+            .match(/^[.,:!? ]/)
+        ) {
+          that.setState({
+            value: this.value(),
+            sentimentScore: sentimentObj.score,
+            sentimentComparative: sentimentObj.comparative,
+            positiveWords: sentimentObj.positive,
+            negativeWords: sentimentObj.negative
+          });
+        }
       }
     };
     return (
@@ -46,6 +56,8 @@ class TextField extends Component {
         <TextAnalysis
           sentimentScore={this.state.sentimentScore}
           sentimentComparative={this.state.sentimentComparative}
+          positiveWords={this.state.positiveWords}
+          negativeWords={this.state.negativeWords}
         />
       </div>
     );
