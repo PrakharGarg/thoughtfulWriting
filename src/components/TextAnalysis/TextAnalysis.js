@@ -26,13 +26,25 @@ class TextAnalysis extends Component {
     }
   }
   render() {
+    const positiveLength = this.props.positiveWords
+      ? this.props.positiveWords.length
+      : 0;
+    const negativeLength = this.props.negativeWords
+      ? this.props.negativeWords.length
+      : 0;
+
+    console.log(this.props);
     const pieChartData = [
       {
         title: "Positive",
-        value: this.state.positiveScore,
+        value: positiveLength,
         color: "#00FF65"
       },
-      { title: "Negative", value: this.state.negativeScore, color: "#FF0000" }
+      {
+        title: "Negative",
+        value: negativeLength,
+        color: "#FF0000"
+      }
     ];
     return (
       <div className="TextAnalysis">

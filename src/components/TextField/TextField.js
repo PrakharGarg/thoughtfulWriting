@@ -11,7 +11,9 @@ class TextField extends Component {
     this.state = {
       value: "",
       sentimentScore: 0,
-      sentimentComparative: 0
+      sentimentComparative: 0,
+      positiveWords: [],
+      negativeWords: []
     };
   }
 
@@ -34,7 +36,9 @@ class TextField extends Component {
           that.setState({
             value: this.value(),
             sentimentScore: sentimentObj.score,
-            sentimentComparative: sentimentObj.comparative
+            sentimentComparative: sentimentObj.comparative,
+            positiveWords: sentimentObj.positive,
+            negativeWords: sentimentObj.negative
           });
         }
       }
@@ -52,6 +56,8 @@ class TextField extends Component {
         <TextAnalysis
           sentimentScore={this.state.sentimentScore}
           sentimentComparative={this.state.sentimentComparative}
+          positiveWords={this.state.positiveWords}
+          negativeWords={this.state.negativeWords}
         />
       </div>
     );
