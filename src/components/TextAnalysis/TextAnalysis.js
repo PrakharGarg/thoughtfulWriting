@@ -33,7 +33,6 @@ class TextAnalysis extends Component {
       ? this.props.negativeWords.length
       : 0;
 
-    console.log(this.props);
     const pieChartData = [
       {
         title: "Positive",
