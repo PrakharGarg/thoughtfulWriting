@@ -44,6 +44,7 @@ class TextField extends Component {
         body: JSON.stringify(this.state.value) // body data type must match "Content-Type" header
       })
         .then(response => response.json())
+        .then(response => console.log(response))
         .then(response => this.setState({ ents: response }));
   }
 
