@@ -4,6 +4,7 @@ import ISimpleMDE from "react-simplemde-v1";
 import Sentiment from "sentiment";
 import "simplemde/dist/simplemde.min.css";
 import TextAnalysis from "../TextAnalysis/TextAnalysis";
+import RecArticles from "../RecArticles/RecArticles";
 
 class TextField extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class TextField extends Component {
       sentimentComparative: 0,
       positiveWords: [],
       negativeWords: [],
-      ents: []
+      ents: [],
+      recArticles: []
     };
   }
 
@@ -25,6 +27,32 @@ class TextField extends Component {
   componentWillUnmount() {
     clearInterval(this.timer);
     this.timer = null;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (JSON.stringify(prevState.ents) !== JSON.stringify(this.state.ents)) {
+      this.newsAPI();
+    }
+  }
+
+  newsAPI() {
+    var query = "";
+    var subjects = this.state.ents;
+    subjects.forEach(subject => {
+      subject = subject.replace(/ /g, "+");
+      query += subject;
+      query += "+";
+    });
+    query = query.substr(0, query.length - 1);
+
+    var url =
+      "https://newsapi.org/v2/everything?q=" +
+      query +
+      "&pageSize=5&apiKey=d3bed521b6ec4adeabcd74ba5fae94e2";
+
+    fetch(url)
+      .then(response => response.json())
+      .then(response => this.setState({ recArticles: response.articles }));
   }
 
   getItems() {
@@ -44,7 +72,6 @@ class TextField extends Component {
         body: JSON.stringify(this.state.value) // body data type must match "Content-Type" header
       })
         .then(response => response.json())
-        .then(response => console.log(response))
         .then(response => this.setState({ ents: response }));
   }
 
@@ -90,6 +117,7 @@ class TextField extends Component {
           positiveWords={this.state.positiveWords}
           negativeWords={this.state.negativeWords}
         />
+        <RecArticles articles={this.state.recArticles} />
       </div>
     );
   }

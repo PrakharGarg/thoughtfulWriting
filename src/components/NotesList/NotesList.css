@@ -1,9 +1,9 @@
 .NotesList {
-    -webkit-user-select: none;
-    -webkit-app-region: drag;
-    width: 25%;
-    height: 100%;
-    position: absolute;
-    border-right: 1px solid #E0D6D5;
-    background-color: #8882FF;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  width: 15%;
+  height: 100%;
+  position: absolute;
+  border-right: 1px solid #e0d6d5;
+  background-color: #8882ff;
 }

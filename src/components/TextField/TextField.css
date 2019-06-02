@@ -1,43 +1,44 @@
 .TextField {
-    position: absolute;
-    width: 65%;
-    left: 30%;
-    height: 85%;
-    display: inline-block;
-    top: 5%;
+  position: absolute;
+  width: 78%;
+  left: 20%;
+  height: 85%;
+  display: inline-block;
+  top: 5%;
 }
 
 .Input {
-    height: 100%;
+  height: 100%;
+  width: 78%;
 }
 
 .Input textarea {
-    resize: none;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    caret-color: #8882FF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    border-style: none; 
-    border-color: Transparent; 
-    overflow: auto;  
-    left: 20px;  
+  resize: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  caret-color: #8882ff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  left: 20px;
 }
 
 .CodeMirror {
-    height: 100% !important;
-    width: 100% !important;
-    border: 0 !important; 
-    caret-color: #8882FF !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 18px !important;
+  height: 100% !important;
+  width: 100% !important;
+  border: 0 !important;
+  caret-color: #8882ff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 18px !important;
 }
 
 .CodeMirror-cursor {
-    color: #8882FF !important;
-  }
+  color: #8882ff !important;
+}
 
 .editor-toolbar {
-    display: none !important;
+  display: none !important;
 }

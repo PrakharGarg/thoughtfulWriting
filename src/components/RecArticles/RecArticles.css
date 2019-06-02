@@ -1,0 +1,25 @@
+.RecArticle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 2px;
+  width: 20%;
+  max-height: 80%;
+  overflow: hidden;
+  text-align: right;
+}
+
+.title {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: #8882ff;
+}
+
+a:hover {
+  color: #4d44f5;
+}
